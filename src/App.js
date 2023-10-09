@@ -1,24 +1,29 @@
-import logo from './logo.svg';
+import { useEffect, useState } from "react";
 import './App.css';
+import Astronaut from "./astronaut";
+import TypingText from "./TypingText";
 
 function App() {
+  const[activity, setActivity] = useState("");
+
+  useEffect( () =>{
+    getActivity();
+}, [])
+
+const getActivity = async () =>{
+  const response = await fetch("https://www.boredapi.com/api/activity/");
+  const data = await response.json();
+  setActivity(data.activity)
+}
+
   return (
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>{activity}</p>
+      <button onClick={getActivity}><TypingText/></button>
+      <Astronaut/>
     </div>
+
   );
 }
 
