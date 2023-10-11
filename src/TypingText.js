@@ -3,7 +3,7 @@ import './App.css';
 import { useLayoutEffect, useRef } from "react";
 
 
-function TypingText() {
+function TypingText({text}) {
  const textRef = useRef(null);
  useLayoutEffect(() => {
   const text = textRef.current;
@@ -21,10 +21,10 @@ function TypingText() {
       delay: index * 0.05,
     });
   });
- }, []);
+ }, [text]);
  return(
   <div>
-    <p ref={textRef}>Give me another idea</p>
+    <p ref={textRef}>{text}</p>
   </div>
  )
 }

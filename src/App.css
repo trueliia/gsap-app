@@ -9,11 +9,12 @@ body{
     justify-content: center;
     align-items:center;
     padding: 1%;
-    margin-top: 10%;
+    margin-top: 4%;
     
 }
 button{
-    padding: 10px;
+  margin-top:2%;
+    padding: 5px;
     border: none;
     box-shadow: inset;
     background-color: #D67BFF;
@@ -22,7 +23,12 @@ button{
     font-family: 'Martian Mono', monospace;
     font-size: 16px;
     border-radius: 10px;
-    margin-top: 2%;
+    color: #451952;
+    cursor: pointer;
+  
+}
+button:active{
+  background-color: #FF6AC2;
 }
 p{
     color: #FFB6D9;

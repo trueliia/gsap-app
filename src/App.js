@@ -19,8 +19,10 @@ const getActivity = async () =>{
   return (
 
     <div className="App">
-      <p>{activity}</p>
-      <button onClick={getActivity}><TypingText/></button>
+      <TypingText text={activity}/>
+      <button onClick={getActivity}>
+        Give me another idea
+      </button>
       <Astronaut/>
     </div>
 
